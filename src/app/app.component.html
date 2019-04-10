@@ -1,0 +1,84 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+<div class="ui-g-12">
+    <div class="ui-g-6">
+    <label>Enter client name and select product type</label><br>
+    <input id="input" type="text" size="30" pInputText [(ngModel)]="text"> 
+    </div>
+    <div class="ui-g-6">
+      <label>Product type</label><br>
+    <p-dropdown [options]="countryData"  placeholder="Select a Product" optionLabel="name" [showClear]="true"></p-dropdown>
+</div>
+  </div>
+  <div class="ui-g-12">
+      <div class="ui-g-6">
+      <label>Limit Size</label><br>
+      <input id="input" type="text" size="30" pInputText [(ngModel)]="text1"> 
+    
+      </div>
+      <div class="ui-g-6">
+        <label>Repayment type</label><br>
+      <p-dropdown [options]="countryData"  placeholder="Select a Product" optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
+    </div>
+    <div class="ui-g-12">
+        <div class="ui-g-6">
+        <label>Utilization</label><br>
+        <input id="input" type="text" size="30" pInputText [(ngModel)]="text2"> 
+        </div>
+        <div class="ui-g-6">
+          <label>Forecast Utilization</label><br>
+        <p-dropdown [options]="countryData"  placeholder="Select a Product" optionLabel="name" [showClear]="true"></p-dropdown>
+    </div>
+      </div>
+      <div class="ui-g-12"> 
+          <label>Tenor</label><br>
+          <h3 class="first">{{val1}}</h3>
+          <p-slider [(ngModel)]="val1" [style]="{'width':'90em'}"></p-slider>
+  </div>
+  <div class="ui-g-12">
+      <div class="ui-g-4">
+      <label>Margin</label><br>
+      <input id="input" type="text" size="30" pInputText [(ngModel)]="text6"> 
+      </div>
+      <div class="ui-g-4">
+        <label>Upfront fee</label><br>
+        <input id="input" type="text" size="30" pInputText [(ngModel)]="text4"> 
+  </div>
+  <div class="ui-g-4">
+      <label>Non Utilization fee</label><br>
+      <input id="input" type="text" size="30" pInputText [(ngModel)]="text8"> 
+</div>
+    </div>
+    <div class="ui-g-12">
+        <div class="ui-g-4">
+            <label>Ancillary Income</label><br>
+            <input id="input" type="text" size="30" pInputText [(ngModel)]="text12"> 
+      </div>
+    </div>
+    <div>
+    <p-button label="Calculate" style="float:right" (click)="newDiv()" ></p-button>
+  </div>
+  <br>
+  <br>
+    <div class="ui-g-12" *ngIf = "calculateDiv">
+        <div class="ui-g-4">
+        <p-button label="RoRWA" (click)="popUp()"></p-button>
+        </div>
+        <div class="ui-g-4">
+        <p-button label="HURDLE"  ></p-button>
+        </div>
+        <div class="ui-g-4">
+        <p-button label="Submit for approval" style="float:right" ></p-button>
+        </div>
+    </div>
+    <p-dialog  [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+        <h3 class="first">Basic</h3>
+        <div class="ui-g" style="width:250px;margin-bottom:10px">
+            <div class="ui-g-12"><p-radioButton name="group1" value="Option 1" label="Option 1" [(ngModel)]="value1" inputId="opt1"></p-radioButton></div>
+            <div class="ui-g-12"><p-radioButton name="group1" value="Option 2" label="Option 2" [(ngModel)]="value2" inputId="opt2"></p-radioButton></div>
+            <div class="ui-g-12"><p-radioButton name="group1" value="Option 3" label="Option 3" [(ngModel)]="value3" inputId="opt3"></p-radioButton></div>
+        </div>
+    </p-dialog>
+  </div>
+  
